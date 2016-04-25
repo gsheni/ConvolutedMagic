@@ -1,6 +1,6 @@
-.PHONY: test
+.PHONY: WB-COMBINED
 
-test:
-	gcc -std=c99 test.c 
+WB-COMBINED:
+	gcc -std=c99 -o WB-COMBINED WB-COMBINED.c 
 clean:
-	rm -f *.o test
+	rm -f *.o WB-COMBINED
