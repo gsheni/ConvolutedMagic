@@ -12,7 +12,8 @@ enc_cfg_t _ctx_iface(dcf_t s, enc_cfg2_t i){
 	int c = (((s & ((dcf_t)0x1FULL << i * 5)) >> i * 5) + 65);
 	printf("%c", c); }
 	enc_cfg2_t main() {
-	for (int i=0; i<17; i++){
+	int i;
+	for (i=0; i<17; i++){
 		_ctx_iface(0x79481E6BBCC01223 + ((dcf_t)0x1222DC << 64), i);
 	}
 	printf("\n");
@@ -51,7 +52,8 @@ u64 * ConvolutedMagic(u64 *x, u64 y, u64 *z, u64 n, u64 n_y) {
 	u64 * a = malloc(sizeof(u64)*n);
 	u64 b,o_64,o_bit;
 
-	for (int i=0; i<n; i++) {
+	int i;
+	for ( i=0; i<n; i++) {
 		o_64 = z[i] >> 6;
 		o_bit= z[i] - ((z[i]>>6) << 6);
 		b = *(x+o_64) << o_bit;
